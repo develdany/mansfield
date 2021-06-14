@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MotivosController;
 use App\Http\Controllers\MotivosDetalleController;
 use App\Http\Controllers\DetalleController;
+use App\Http\Controllers\DetencionesController;
 use App\Http\Controllers\EquiposController;
 use App\Http\Controllers\ImputacionesController;
 use App\Http\Controllers\TagsController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +41,6 @@ Route::resource('detalle', DetalleController::class);
 Route::resource('tags', TagsController::class);
 Route::resource('equipos', EquiposController::class);
 Route::resource('imputaciones', ImputacionesController::class);
+
+Route::resource('detenciones', DetencionesController::class);
+Route::get('lista-detenciones', [DetencionesController::class, 'DetencionesListaFiltro']);

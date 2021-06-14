@@ -12,5 +12,5 @@ class Motivo extends Model
     public function detalle()
     {
         return $this->hasMany(Detalle::class);
-    }
+    } 
 }

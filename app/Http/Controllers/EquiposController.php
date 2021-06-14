@@ -35,7 +35,10 @@ class EquiposController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $equipo = new Equipo();
+        $equipo->nombre = $request->nombre;
+        $equipo->save();
+        return;
     }
 
     /**
@@ -80,6 +83,8 @@ class EquiposController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $equipo = Equipo::findOrFail($id);
+        $equipo->delete();
+        return;
     }
 }
